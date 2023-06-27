@@ -1,6 +1,8 @@
-steps:
-  - label: "Tests"
-    plugins:
-      - docker-compose#v2.0.0:
-          config: test/docker-compose.yml
-          run: tests
+version: '2'
+services:
+  tests:
+    image: buildkite/plugin-tester:v4.1.0
+    config: test/docker-compose.yml
+    volumes:
+      - ".:/plugin"
+    run: tests
