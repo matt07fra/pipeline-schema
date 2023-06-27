@@ -3,6 +3,4 @@ services:
   tests:
     image: buildkite/plugin-tester:v4.1.0
     config: test/docker-compose.yml
-    volumes:
-      - ".:/plugin"
-    run: tests
+    
